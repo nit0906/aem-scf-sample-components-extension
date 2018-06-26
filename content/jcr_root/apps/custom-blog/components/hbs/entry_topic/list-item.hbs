@@ -36,7 +36,7 @@
             {{/each}}
             {{#each author.badges}}
                 {{#unless this.isAssigned}}
-                    <img class="scf-badge-image" alt="{{this.title}}" title="{{this.title}}" src="{{this.imageUrl}}" /> 
+                    <img class="scf-badge-image" alt="{{this.title}}" title="{{this.title}}" src="{{this.imageUrl}}" />
                 {{/unless}}
             {{/each}}
             {{#if viewCounts.total}}
@@ -61,23 +61,19 @@
         </p>
         <p>
             {{#if this.configuration.isAttachmentAllowed}}
-                {{#if attachments}}
-                    <div class="scf-comment-attachments">
-                        {{#each attachments}}
+            {{#if this.properties.dam_attachements_ss}}
+                <div class="scf-comment-attachments">
+                    {{#each this.properties.dam_attachements_ss}}
 
-                            {{#if this.image}}
-                                <div class="scf-comment-img-att">
-                                    <img src="{{this.path}}" class="scf-comment-attachment-img" />
-                                    <div class="scf-comment-att-name"><a href="{{this.path}}" target="_blank" class="scf-link">{{name}}</a></div>
-                                </div>
-                            {{else}}
-                                <div class="scf-comment-att scf-icon-attachment scf-small "><a class="scf-link scf-comment-att-link" href="{{this.path}}" target="_blank">{{this.name}}</a></div>
-                            {{/if}}
+                       <div class="scf-comment-att scf-icon-attachment scf-small "><a class="scf-link scf-comment-att-link" href="{{this}}" target="_blank">{{this}}</a></div>
 
-                        {{/each}}
-                    </div>
-                {{/if}}
+
+                    {{/each}}
+
+                     <div class="scf-comment-att scf-icon-attachment scf-small "><a class="scf-link scf-comment-att-link" href="{{this.properties.dam_attachements_ss}}" target="_blank">{{this.properties.dam_attachements_ss}}</a></div>
+                </div>
             {{/if}}
+        {{/if}}
         </p>
     </div>
 
